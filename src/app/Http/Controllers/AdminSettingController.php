@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use Rgergo67\LaravelSettings\App\Models\Setting;
 use Rgergo67\LaravelSettings\App\Repositories\SettingRepository;
 
-class SettingController extends Controller
+class AdminSettingController extends Controller
 {
 
     private $setting;
@@ -27,22 +27,34 @@ class SettingController extends Controller
     {
         $settings = $this->setting->all();
 
-        return view('settings::index', [
+        return view('settings::admin.index', [
             'settings' => $settings
         ]);
     }
 
     /**
-     * Display the specified resource.
+     * Show the form for creating a new resource.
      *
-     * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function create()
     {
-        return view('settings::show', [
-            'setting' => $this->setting->findOrFail($id)
-        ]);
+        return view('settings::admin.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->setting->create($request->all());
+
+        return redirect()->route('settings-admin.index')
+                        ->with('success', __('form.saved'));
+
     }
 
     /**
@@ -54,7 +66,7 @@ class SettingController extends Controller
     public function edit($id)
     {
         $setting = $this->setting->findOrFail($id);
-        return view('settings::edit', compact('setting'));
+        return view('settings::admin.edit', compact('setting'));
     }
 
     /**
@@ -68,7 +80,7 @@ class SettingController extends Controller
     {
         $setting->update($request->all());
 
-        return redirect()->route('settings.index')
+        return redirect()->route('settings-admin.index')
                         ->with('success', __('form.saved'));
 
     }
@@ -84,7 +96,7 @@ class SettingController extends Controller
         $setting = $this->setting->findOrFail($id);
         $setting->delete();
 
-        return redirect()->route('settings.index')->withSuccess(__('form.deleted'));
+        return redirect()->route('settings-admin.index')->withSuccess(__('form.deleted'));
     }
 
 }

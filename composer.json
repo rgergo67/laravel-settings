@@ -25,6 +25,9 @@
     "laravel": {
       "providers": [
         "Rgergo67\\LaravelSettings\\LaravelSettingsServiceProvider"
+      ],
+      "aliases": [
+          "Setting": "Rgergo67\\LaravelSettings\\App\\Facades\\Setting"
       ]
     }
   },

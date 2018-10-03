@@ -13,13 +13,13 @@
 
 @section('content')
     <h1>
-        <a href="{{ route('settings.index') }}">@lang('settings::settings.index')</a>
+        <a href="{{ route('settings-admin.index') }}">@lang('settings::settings.index')</a>
         @lang('settings::settings.add') @lang('settings::settings.title')
     </h1>
 
-    {{ Form::open(['route' => ['settings.store'], 'id' => 'settings-form']) }}
+    {{ Form::open(['route' => ['settings-admin.store'], 'id' => 'settings-form']) }}
 
-        @include('settings::_form')
+        @include('settings::admin._form')
 
     {{ Form::close() }}
 
