@@ -1,0 +1,12 @@
+<?php
+
+namespace Rgergo67\LaravelSettings\App\Facades;
+
+use Illuminate\Support\Facades\Facade;
+
+class Setting extends Facade
+{
+
+    protected static function getFacadeAccessor() { return 'setting'; }
+
+}
