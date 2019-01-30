@@ -8,7 +8,7 @@
 
 @section('footer-scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
-    <script src="{{ asset('/js/rgergo67/laravel-settings/settings.js') }}"></script>
+    <script src="{{ asset('/vendor/rgergo67/laravel-settings/settings.js') }}"></script>
 @append
 
 @section('content')
