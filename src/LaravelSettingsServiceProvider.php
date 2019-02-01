@@ -26,7 +26,7 @@ class LaravelSettingsServiceProvider extends ServiceProvider
             __DIR__.'/config/laravel-settings.php' => config_path('laravel-settings.php')
         ], 'config');
         $this->publishes([
-            __DIR__.'/public/js' => public_path('vendor/rgergo67/laravel-settings'),
+            __DIR__.'/public/js' => public_path('js/vendor/rgergo67/laravel-settings'),
         ], 'public');
 
         $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'settings');

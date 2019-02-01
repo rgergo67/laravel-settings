@@ -8,7 +8,7 @@
 
 @section('footer-scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
-    <script src="{{ asset('/vendor/rgergo67/laravel-settings/settings.js') }}"></script>
+    <script src="{{ asset('/js/vendor/rgergo67/laravel-settings/settings.js') }}"></script>
 @append
 
 @section('content')
@@ -16,6 +16,8 @@
         <a href="{{ route('settings.index') }}">@lang('settings::settings.index')</a>
         @lang('settings::settings.edit') {{ $setting->label ?? $setting->key }}
     </h1>
+
+    <div class="alert alert-info">{!! $setting->description !!}</div>
 
     {{ Form::model($setting, ['route' => ['settings.update', $setting], 'method' => 'PUT', 'id' => 'settings-form']) }}
 
