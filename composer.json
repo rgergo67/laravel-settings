@@ -1,38 +1,41 @@
 {
-  "name": "rgergo67/laravel-settings",
-  "description": "A Laravel Settings Package",
-  "license": "MIT",
-  "authors": [
+    "name": "rgergo67/laravel-settings",
+    "description": "A Laravel Settings Package",
+    "license": "MIT",
+    "authors": [
     {
-      "name" : "Ratting Gergely",
-      "email": "67developer@gmail.com"
+        "name" : "Ratting Gergely",
+        "email": "67developer@gmail.com"
     }
-  ],
-  "minimum-stability": "stable",
-  "require": {
-    "php" : "^7.1",
-    "illuminate/support": "~5.6.0|~5.7.0",
-    "laravelcollective/html": "^5.4.0"
-  },
-  "require-dev": {
-  },
-  "autoload": {
-    "psr-4": {
-      "Rgergo67\\LaravelSettings\\": "src"
-    }
-  },
-  "extra": {
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php" : "^7.1",
+        "illuminate/support": "~5.6.0|~5.7.0",
+        "laravelcollective/html": "^5.4.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Rgergo67\\LaravelSettings\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
     "laravel": {
-      "providers": [
-        "Rgergo67\\LaravelSettings\\LaravelSettingsServiceProvider"
-      ],
-      "aliases": {
-          "Setting": "App\\Facades\\Setting"
-      }
+        "providers": [
+            "Rgergo67\\LaravelSettings\\LaravelSettingsServiceProvider"
+        ],
+        "aliases": {
+            "Setting": "Rgergo67\\LaravelSettings\\App\\Facades\\Setting"
+        }
     }
-  },
-  "scripts": {
-    "test": "vendor/bin/phpunit",
-    "test:windows": "vendor\\bin\\phpunit"
-  }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:windows": "vendor\\bin\\phpunit"
+    }
 }

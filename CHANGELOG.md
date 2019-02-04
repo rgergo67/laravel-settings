@@ -1,4 +1,19 @@
-CHANGELOG
-===
+# Changelog
+All notable changes to this project will be documented in this file.
 
-This changelog contains all notable change of the laravel-settings package
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.4] - 2019-02-04
+
+From now on all settings will be fetched at once, and from there on the values will be retrieved from the singleton object instead of the database
+
+### Added
+- Helper function
+
+### Changed
+- Updated summernote to 0.8.11
+- Changed bind to singleton
+
+### Fixed
+- Facade alias, from now on we can reach Setting:: everywhere

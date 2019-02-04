@@ -7,30 +7,32 @@ use Rgergo67\LaravelSettings\App\Models\Setting;
 
 class SettingRepository
 {
-    protected $setting;
+    protected $model;
+    protected $allSettings;
+    protected $settings;
 
     public function __construct()
     {
-        $this->setting = new Setting();
+        $this->model = new Setting();
+        $this->allSettings = $this->model->all();
+
+        foreach($this->allSettings as $setting){
+            $this->settings[$setting->key] = $setting->value;
+        }
     }
 
     public function all()
     {
-        return $this->setting->all();
+        return $this->allSettings;
     }
 
     public function find($key)
     {
-        return $this->setting->retrieve($key)->first();
+        return $this->model->retrieve($key)->first();
     }
 
     public function get($key){
-        $setting = $this->setting->retrieve($key)->first();
-        if(empty($setting)){
-            return null;
-        }
-
-        return $setting->value;
+        return $this->settings[$key] ?? null;
     }
 
     public function set($key, $value)
@@ -67,7 +69,7 @@ class SettingRepository
      */
     public function __call($method, $args)
     {
-        return call_user_func_array([$this->setting, $method], $args);
+        return call_user_func_array([$this->model, $method], $args);
     }
 
 }

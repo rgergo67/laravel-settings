@@ -43,7 +43,7 @@ class LaravelSettingsServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'settings');
 
-        $this->app->bind('setting', function () {
+        $this->app->singleton('setting', function () {
             return new \Rgergo67\LaravelSettings\App\Repositories\SettingRepository();
         });
     }
