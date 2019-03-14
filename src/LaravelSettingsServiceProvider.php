@@ -40,7 +40,11 @@ class LaravelSettingsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        if (file_exists(base_path().'/routes/vendor/laravel-settings.php')) {
+            $this->loadRoutesFrom(base_path().'/routes/vendor/laravel-settings.php');
+        }else{
+            $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        }
         $this->loadViewsFrom(__DIR__.'/resources/views', 'settings');
 
         $this->app->singleton('setting', function () {
