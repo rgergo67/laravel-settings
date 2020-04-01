@@ -1,9 +1,9 @@
 <?php
 
-namespace Rgergo67\LaravelSettings\App\Repositories;
+namespace Rgergo67\Laravel\Settings\App\Repositories;
 
 use App\Repositories\Repository;
-use Rgergo67\LaravelSettings\App\Models\Setting;
+use Rgergo67\Laravel\Settings\App\Models\Setting;
 
 class SettingRepository
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rgergo67\LaravelSettings;
+namespace Rgergo67\Laravel\Settings;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -48,7 +48,7 @@ class LaravelSettingsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'settings');
 
         $this->app->singleton('setting', function () {
-            return new \Rgergo67\LaravelSettings\App\Repositories\SettingRepository();
+            return new \Rgergo67\Laravel\Settings\App\Repositories\SettingRepository();
         });
     }
 }

@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Rgergo67\\LaravelSettings\\": "src"
+            "Rgergo67\\Laravel\\Settings\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -25,10 +25,10 @@
     "extra": {
     "laravel": {
         "providers": [
-            "Rgergo67\\LaravelSettings\\LaravelSettingsServiceProvider"
+            "Rgergo67\\Laravel\\Settings\\LaravelSettingsServiceProvider"
         ],
         "aliases": {
-            "Setting": "Rgergo67\\LaravelSettings\\App\\Facades\\Setting"
+            "Setting": "Rgergo67\\Laravel\\Settings\\App\\Facades\\Setting"
         }
     }
     },

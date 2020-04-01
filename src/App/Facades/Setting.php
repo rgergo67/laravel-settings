@@ -1,6 +1,6 @@
 <?php
 
-namespace Rgergo67\LaravelSettings\App\Facades;
+namespace Rgergo67\Laravel\Settings\App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

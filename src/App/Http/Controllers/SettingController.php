@@ -1,12 +1,12 @@
 <?php
 
-namespace Rgergo67\LaravelSettings\App\Http\Controllers;
+namespace Rgergo67\Laravel\Settings\App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Rgergo67\LaravelSettings\App\Models\Setting;
-use Rgergo67\LaravelSettings\App\Repositories\SettingRepository;
+use Rgergo67\Laravel\Settings\App\Models\Setting;
+use Rgergo67\Laravel\Settings\App\Repositories\SettingRepository;
 
 class SettingController extends Controller
 {

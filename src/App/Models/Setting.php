@@ -1,6 +1,6 @@
 <?php
 
-namespace Rgergo67\LaravelSettings\App\Models;
+namespace Rgergo67\Laravel\Settings\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
